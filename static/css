@@ -1,0 +1,13 @@
+.circle {
+    width: 200px; /* Set the width and height to make a circle */
+    height: 200px;
+    border-radius: 50%; /* Makes the div circular */
+    overflow: hidden; /* Ensures the image doesn't go outside the circle */
+    border: 2px solid black; /* Optional: Add border */
+}
+
+.square-img {
+    display: block;
+    width: 100%; /* Make the image fill the circle */
+    height: auto; /* Maintain aspect ratio */
+}

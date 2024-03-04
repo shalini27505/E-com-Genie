@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>E-com Genie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        background-color: #aba0a0;
+      }
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+}
+.search-box {
+    position: relative;
+    width: 50%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    outline: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    width: 70%;
+    border-color: #333;
+}
+
+.search-box button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigation-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.navigation-menu ul li {
+    padding: 10px;
+}
+
+.navigation-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navigation-menu ul li a:hover {
+    color: #ccc;
+}
+
+.navigation-menu ul li i {
+    margin-right: 5px;
+}
+
+.navigation-menu {
+    perspective: 1000px;
+}
+
+.navigation-menu ul {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.navigation-menu ul:hover {
+    transform: rotateX(20deg);
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+          TC
+      </div>
+      <span class="timecraft">TimeCraft</span>
+      <div class="search-box">
+          <input type="search" placeholder="Search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="navigation-menu">
+          <ul>
+              <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
+              <li><a href="categories"><i class="fa fa-list"></i> Categories</a></li>
+              <li><a href="myorders"><i class="fa fa-shopping-bag"></i> My Orders</a></li>
+              <li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+          </ul>
+      </div>
+  </nav>
+    <br>
+
+    <h3 style="text-align: center;">TOP BRANDS</h3><br>
+
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <a href="{% url 'hermes' %}"> 
+          <div class="card">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/e/d/tr:w-480,/ed1459fCSLD1945SS23PUR_1.jpg?rnd=20200526195200"  class="card-img-top" alt="Hermes">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">HERMES</h5>
+              <p class="card-text">Discover the latest ready-to-wear dresses and skirts, made with the gracefulness. Hermes unveils its new creations made with simplicity and sophistication.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- Repeat the above block for other brand cards -->
+        <div class="col">
+          <a href="{% url 'zara' %}"> 
+          <div class="card">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/0/f/tr:w-480,/0fca3adCS_AN_1.jpg?rnd=20200526195200" class="card-img-top" alt="Zara">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">ZARA</h5>
+              <p class="card-text">Latest trends in clothing for women, men & kids at ZARA online. Find new arrivals, fashion catalogs, collections & lookbooks every week.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'chanel' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/6/c/tr:w-480,/6cba2cfSKRTSE2113AW23FUS_1.jpg?rnd=20200526195200" class="card-img-top" alt="Chanel">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">CHANEL</h5>
+              <p class="card-text">Discover more of Ready-to-Wear dresses creations from the latest Fashion collections collection in CHANEL boutiques.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add more brand cards as needed -->
+      </div>
+    </div>
+<br>
+    <h3 style="text-align: center;">RECOMMENDED ITEMS</h3>
+<br>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <a href="your_link_here">
+            <img src="{% static 'images/NAZ.avif' %}" class="card-img-top" alt="Lapiz Blue Bandhani Printed Anarkali Kurta">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">Lapiz Blue Bandhani Printed Anarkali Kurta</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+        <!-- Repeat the above block for other recommended items -->
+        <div class="col">
+          <div class="card">
+            <a href="your_link_here">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/7/9/tr:w-480,/79b4e45NF_STYLU00001373_3.jpg?rnd=20200526195200" class="card-img-top" alt="D11 Womens Georgette Embroidered Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">D11 Womens Georgette Embroidered Dress</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="your_link_here">
+            <img src="{% static 'images/kurti.avif' %}" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">Indigo Floral Printed Shoulder Strip Long Dress</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+        <!-- Add more recommended items as needed -->
+      </div>
+    </div>
+
+
+    <br>
+    <h3 style="text-align: center;">FIND YOUR NEED</h3>
+<br>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'wt' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/9/0/tr:w-480,/902a50dSVMPIO3F1459_3.jpg?rnd=20200526195200" class="card-img-top" alt="Lapiz Blue Bandhani Printed Anarkali Kurta">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">SAREES </h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+        <!-- Repeat the above block for other recommended items -->
+  
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'lehangas' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/2/6/tr:w-480,/26c800eIR7303_1.jpg?rnd=20200526195200" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">LEHANGAS</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'ww' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/3/tr:w-480,/a3e3c6cDR011602_1.jpg?rnd=20200526195200" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">WESTERN WEARS</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'paulmi' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/8/4/tr:w-480,/84c1acdPaulmi-PH1457_1.jpg?rnd=20200526195200" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">PAULMI SAREES</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+
+         <div class="col">
+          <div class="card">
+            <a href="{% url 'kurtis' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/d/b/tr:w-480,/dbk0336_1_5212226d.jpg?rnd=20200526195200" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">KURTIS</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'night' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/8/b/tr:w-480,/8b6e759SAY-NSP-124_1.jpg?rnd=20200526195200" class="card-img-top" alt="D11 Womens Georgette Embroidered Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">NIGHT WEARS</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+          
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'hoodie' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/7/1/tr:w-480,/71ff717M2W22320-PLUM_1.jpg?rnd=20200526195200" class="card-img-top" alt="D11 Womens Georgette Embroidered Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">HOODIES</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+          </div>
+
+          <div class="col">
+            <div class="card">
+              <a href="{% url 'shirts' %}">
+              <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/a/tr:w-480,/aa58_1_041185dd.jpg?rnd=20200526195200" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">SHIRTS</h5>
+                <!-- Add any additional information here -->
+              </div>
+            </div>
+          </div>
+
+        <div class="col">
+          <div class="card">
+            <a href="{% url 'track' %}">
+            <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/b/tr:w-480,/5bcb701MCLOVI00061771_1.jpg?rnd=20200526195200" class="card-img-top" alt="Indigo Floral Printed Shoulder Strip Long Dress">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">TRACK SUITS</h5>
+              <!-- Add any additional information here -->
+            </div>
+          </div>
+        </div>
+
+    
+        <!-- Add more recommended items as needed -->
+      </div>
+    </div>
+      
+
+
+
+
+
+    
+  </body>
+</html>
